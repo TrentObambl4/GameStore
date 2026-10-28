@@ -6,7 +6,7 @@
 
     <title>{{ $title ?? 'Game Store' }}</title>
 
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/styles.css') }}">
 </head>
 
 <body>
