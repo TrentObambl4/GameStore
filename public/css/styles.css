@@ -1,0 +1,1988 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #0d0f14;
+    color: #f4f5f7;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13, 15, 20, 0.94);
+    border-bottom: 1px solid #292e38;
+    backdrop-filter: blur(14px);
+}
+
+.header-inner {
+    width: min(1200px, calc(100% - 40px));
+    min-height: 74px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.logo:hover {
+    color: #8297ff;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-nav > a {
+    color: #aeb5c2;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main-nav > a:hover {
+    color: #ffffff;
+}
+
+.user-badge {
+    padding: 6px 11px;
+    border: 1px solid #303642;
+    border-radius: 20px;
+    background: #181c23;
+    color: #aeb5c2;
+    font-size: 13px;
+}
+
+.main-nav form {
+    margin: 0;
+}
+
+.logout-button {
+    padding: 8px 14px;
+    border: 1px solid #343b47;
+    border-radius: 7px;
+    background: #1b1f27;
+    color: #d8dbe1;
+}
+
+.logout-button:hover {
+    background: #282e39;
+}
+
+.page-container {
+    width: min(1200px, calc(100% - 40px));
+    min-height: calc(100vh - 150px);
+    margin: 0 auto;
+    padding: 50px 0 80px;
+}
+
+.hero {
+    min-height: 480px;
+    margin-bottom: 80px;
+    border: 1px solid #292e38;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 80% 20%, rgba(100, 119, 255, 0.25), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(119, 80, 220, 0.15), transparent 35%),
+        #151820;
+}
+
+.hero-content {
+    max-width: 700px;
+    padding: 65px;
+}
+
+.hero-label,
+.section-label {
+    color: #8297ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 12px 0 20px;
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -3px;
+}
+
+.hero p {
+    max-width: 580px;
+    margin: 0 0 30px;
+    color: #9ca4b1;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+
+    border: 1px solid #343b47;
+    border-radius: 8px;
+
+    background: #20252e;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background: #2b323e;
+    border-color: #48515f;
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    border-color: #7185ff;
+    background: #6478ee;
+}
+
+.btn-primary:hover {
+    background: #7387ff;
+    border-color: #8294ff;
+}
+
+.btn-dark {
+    background: #171b22;
+}
+
+.btn-danger {
+    border-color: #66343c;
+    background: #3b2025;
+    color: #ffb6bf;
+}
+
+.btn-danger:hover {
+    background: #512a31;
+}
+
+.btn-small {
+    min-height: 36px;
+    padding: 7px 12px;
+    font-size: 13px;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.section {
+    margin-bottom: 80px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2,
+.page-title h1,
+.dashboard-header h1 {
+    margin: 5px 0 0;
+    font-size: 34px;
+    letter-spacing: -1px;
+}
+
+.game-count {
+    color: #777f8d;
+    font-size: 14px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.category-card {
+    min-height: 115px;
+    padding: 20px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+
+    border: 1px solid #292e38;
+    border-radius: 12px;
+    background: #151820;
+
+    transition: 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    border-color: #5969ad;
+    background: #191d27;
+}
+
+.category-card strong {
+    display: block;
+    font-size: 15px;
+}
+
+.category-card small {
+    display: block;
+    margin-top: 5px;
+    color: #737c8a;
+}
+
+.category-icon {
+    font-size: 30px;
+    color: #8297ff;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.game-card {
+    overflow: hidden;
+    padding: 0;
+
+    border: 1px solid #292e38;
+    border-radius: 13px;
+    background: #151820;
+
+    transition: 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    border-color: #4b5566;
+}
+
+.game-cover {
+    height: 190px;
+    overflow: hidden;
+    background: #20242c;
+}
+
+.game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cover-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg, #1b1f28, #272d38);
+}
+
+.cover-placeholder span {
+    color: #5e6878;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.cover-placeholder.large {
+    min-height: 500px;
+}
+
+.game-card-body {
+    padding: 22px;
+}
+
+.game-category {
+    margin-bottom: 8px;
+    color: #8297ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.game-card h3 {
+    margin: 0 0 9px;
+    font-size: 21px;
+}
+
+.game-card p {
+    min-height: 70px;
+    margin: 0 0 20px;
+    color: #8f97a5;
+    font-size: 14px;
+}
+
+.game-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.game-price,
+.detail-price {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.page-title {
+    margin-bottom: 35px;
+}
+
+.page-title p,
+.dashboard-header p {
+    color: #818997;
+}
+
+.detail-page {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #858e9e;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
+
+.game-detail {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+
+    padding: 30px;
+
+    border: 1px solid #292e38;
+    border-radius: 16px;
+    background: #151820;
+}
+
+.detail-cover {
+    min-height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #20242c;
+}
+
+.detail-cover img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.detail-content h1 {
+    margin: 10px 0 20px;
+    font-size: 46px;
+    line-height: 1.05;
+}
+
+.detail-description {
+    margin-bottom: 30px;
+    color: #a0a7b3;
+    font-size: 16px;
+}
+
+.detail-price {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.detail-meta {
+    margin-bottom: 30px;
+    color: #777f8c;
+}
+
+.auth-page {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+
+    border: 1px solid #292e38;
+    border-radius: 15px;
+    background: #151820;
+}
+
+.auth-header {
+    margin-bottom: 30px;
+}
+
+.auth-header h1 {
+    margin: 7px 0;
+    font-size: 34px;
+}
+
+.auth-header p {
+    margin: 0;
+    color: #818997;
+}
+
+.form-card,
+.large-form {
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #c7ccd5;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid #343b47;
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #101319;
+    color: #ffffff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #6478ee;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.auth-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #292e38;
+    color: #777f8d;
+    font-size: 14px;
+    text-align: center;
+}
+
+.auth-footer a {
+    color: #8297ff;
+    font-weight: 700;
+}
+
+.alert {
+    margin-bottom: 25px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.alert-error {
+    border: 1px solid #66353d;
+    background: #321c21;
+    color: #ffb6bf;
+}
+
+.alert-success {
+    border: 1px solid #345d4a;
+    background: #182a22;
+    color: #9de0be;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.dashboard-table,
+.users-list {
+    overflow: hidden;
+    border: 1px solid #292e38;
+    border-radius: 12px;
+    background: #151820;
+}
+
+.dashboard-row,
+.user-row {
+    min-height: 85px;
+    padding: 15px 20px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    align-items: center;
+    gap: 20px;
+
+    border-bottom: 1px solid #292e38;
+}
+
+.dashboard-row:last-child,
+.user-row:last-child {
+    border-bottom: 0;
+}
+
+.dashboard-game {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.dashboard-game strong,
+.user-info strong {
+    display: block;
+}
+
+.dashboard-game span,
+.user-info span {
+    display: block;
+    margin-top: 3px;
+    color: #777f8c;
+    font-size: 13px;
+}
+
+.mini-cover {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+    background: #242a34;
+
+    color: #687384;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.dashboard-price {
+    font-weight: 700;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-active {
+    background: #183427;
+    color: #8bd8ae;
+}
+
+.status-hidden {
+    background: #30291b;
+    color: #ddc27d;
+}
+
+.row-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.row-actions form {
+    margin: 0;
+}
+
+.user-row {
+    grid-template-columns: 1fr 1fr;
+}
+
+.role-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.role-form select {
+    max-width: 180px;
+}
+
+.empty-state {
+    padding: 60px 30px;
+    border: 1px dashed #343b47;
+    border-radius: 12px;
+    background: #12151b;
+    text-align: center;
+}
+
+.empty-state h3 {
+    margin-top: 0;
+}
+
+.empty-state p {
+    margin-bottom: 25px;
+    color: #777f8c;
+}
+
+.site-footer {
+    border-top: 1px solid #292e38;
+    background: #101218;
+}
+
+.footer-inner {
+    width: min(1200px, calc(100% - 40px));
+    min-height: 110px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-inner strong {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-inner p {
+    margin: 3px 0 0;
+    color: #707887;
+    font-size: 13px;
+}
+
+.footer-copy {
+    color: #626a77;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .game-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .row-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .header-inner {
+        width: calc(100% - 24px);
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .page-container {
+        width: calc(100% - 24px);
+        padding-top: 30px;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding: 35px 25px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .category-grid,
+    .game-grid,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .game-detail {
+        padding: 18px;
+    }
+
+    .detail-cover,
+    .detail-cover img,
+    .cover-placeholder.large {
+        min-height: 350px;
+    }
+
+    .detail-content h1 {
+        font-size: 36px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-row,
+    .user-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .role-form {
+        justify-content: flex-start;
+    }
+
+    .footer-inner {
+        width: calc(100% - 24px);
+        padding: 20px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* ============================================================
+   ADMIN / SELLER FINAL STYLES
+   ============================================================ */
+
+.seller-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.seller-card {
+    background: var(--card, #171b22);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 230px;
+}
+
+.seller-card-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.06);
+    font-size: 27px;
+}
+
+.seller-card h2 {
+    margin: 0 0 6px;
+}
+
+.seller-card p {
+    margin: 0;
+    opacity: .65;
+}
+
+.seller-card .button {
+    margin-top: auto;
+}
+
+.admin-games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.admin-game-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    background: var(--card, #171b22);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.admin-game-info {
+    display: flex;
+    gap: 20px;
+    min-width: 0;
+}
+
+.admin-game-image,
+.admin-game-placeholder {
+    width: 170px;
+    height: 110px;
+    border-radius: 14px;
+    object-fit: cover;
+    flex: 0 0 auto;
+}
+
+.admin-game-placeholder {
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.06);
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.admin-game-info h2 {
+    margin: 0 0 7px;
+}
+
+.game-category {
+    margin: 0 0 8px;
+    opacity: .6;
+}
+
+.game-description {
+    max-width: 650px;
+    margin: 0 0 10px;
+    opacity: .7;
+    line-height: 1.5;
+}
+
+.game-price {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.status-row {
+    margin-top: 4px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status-active {
+    background: rgba(70, 200, 130, .12);
+    color: #6ee7a5;
+}
+
+.status-blocked {
+    background: rgba(255, 120, 120, .12);
+    color: #ff8f8f;
+}
+
+.admin-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 170px;
+    justify-content: center;
+}
+
+.admin-actions form {
+    margin: 0;
+}
+
+.admin-actions .button {
+    width: 100%;
+}
+
+.button-danger {
+    background: #a83b46;
+    color: white;
+    border: none;
+}
+
+.button-danger:hover {
+    background: #c34a56;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    opacity: .7;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    opacity: 1;
+}
+
+@media (max-width: 1000px) {
+    .seller-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-game-row {
+        flex-direction: column;
+    }
+
+    .admin-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .admin-actions .button {
+        width: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .seller-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-game-info {
+        flex-direction: column;
+    }
+
+    .admin-game-image,
+    .admin-game-placeholder {
+        width: 100%;
+        height: 180px;
+    }
+
+    .admin-actions {
+        flex-direction: column;
+    }
+
+    .admin-actions .button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   ADMIN ACTION BUTTONS
+   ========================================================= */
+
+.admin-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.admin-actions form {
+    margin: 0;
+    padding: 0;
+}
+
+.admin-actions a,
+.admin-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 40px;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Редактировать */
+.admin-actions .edit-button {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.admin-actions .edit-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Заблокировать / Разблокировать */
+.admin-actions .toggle-button {
+    background: rgba(255, 180, 70, 0.10);
+    border-color: rgba(255, 180, 70, 0.24);
+    color: #ffbf68;
+}
+
+.admin-actions .toggle-button:hover {
+    background: rgba(255, 180, 70, 0.17);
+    border-color: rgba(255, 180, 70, 0.38);
+    transform: translateY(-1px);
+}
+
+/* Удалить */
+.admin-actions .delete-button {
+    background: rgba(255, 85, 100, 0.09);
+    border-color: rgba(255, 85, 100, 0.22);
+    color: #ff7f8b;
+}
+
+.admin-actions .delete-button:hover {
+    background: rgba(255, 85, 100, 0.16);
+    border-color: rgba(255, 85, 100, 0.36);
+    transform: translateY(-1px);
+}
+
+/* Общий active */
+.admin-actions a:active,
+.admin-actions button:active {
+    transform: translateY(0);
+}
+
+/* На узких экранах */
+@media (max-width: 600px) {
+    .admin-actions {
+        gap: 8px;
+    }
+
+    .admin-actions a,
+    .admin-actions button {
+        min-height: 38px;
+        padding: 8px 13px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
+   ADMIN ACTION BUTTONS
+   ========================================================= */
+
+.admin-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.admin-actions form {
+    margin: 0;
+    padding: 0;
+}
+
+.admin-actions a,
+.admin-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 40px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Редактировать */
+.admin-actions .edit-button {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.admin-actions .edit-button:hover {
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-1px);
+}
+
+/* Заблокировать / Разблокировать */
+.admin-actions .toggle-button {
+    background: rgba(255, 174, 70, 0.10);
+    border-color: rgba(255, 174, 70, 0.28);
+    color: #ffb347;
+}
+
+.admin-actions .toggle-button:hover {
+    background: rgba(255, 174, 70, 0.18);
+    border-color: rgba(255, 174, 70, 0.42);
+    color: #ffc66d;
+    transform: translateY(-1px);
+}
+
+/* Удалить */
+.admin-actions .delete-button {
+    background: rgba(255, 75, 90, 0.09);
+    border-color: rgba(255, 75, 90, 0.23);
+    color: #ff7f8b;
+}
+
+.admin-actions .delete-button:hover {
+    background: rgba(255, 75, 90, 0.17);
+    border-color: rgba(255, 75, 90, 0.38);
+    color: #ff9aa3;
+    transform: translateY(-1px);
+}
+
+.admin-actions a:active,
+.admin-actions button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .admin-actions {
+        gap: 8px;
+    }
+
+    .admin-actions a,
+    .admin-actions button {
+        min-height: 38px;
+        padding: 8px 13px;
+        font-size: 12px;
+    }
+}
+
+/* ADMIN / SELLER FINAL STYLES */
+
+.admin-page {
+    width: 100%;
+}
+
+.admin-header {
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    margin: 0;
+}
+
+.admin-subtitle {
+    margin-top: 8px;
+    opacity: 0.6;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.back-link:hover {
+    opacity: 1;
+}
+
+.admin-games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.admin-game-row {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) 170px;
+    gap: 18px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.035);
+}
+
+.admin-game-image {
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+}
+
+.admin-game-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-game-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0.35;
+}
+
+.admin-game-info {
+    min-width: 0;
+}
+
+.admin-game-info h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.admin-game-meta {
+    display: flex;
+    gap: 7px;
+    margin-top: 6px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.admin-game-description {
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.65;
+}
+
+.admin-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 170px;
+    justify-content: center;
+}
+
+.admin-actions form {
+    margin: 0;
+}
+
+.admin-actions .button {
+    width: 100%;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+    box-sizing: border-box;
+    border: 1px solid #343b47;
+    border-radius: 8px;
+    background: #20252e;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #292f39;
+}
+
+.button-secondary {
+    background: #20252e;
+    color: #ffffff;
+}
+
+.button-danger {
+    background: #a83b46;
+    color: #ffffff;
+    border: none;
+}
+
+.button-danger:hover {
+    background: #bd4652;
+}
+
+.status {
+    display: inline-block;
+    width: fit-content;
+    padding: 5px 9px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-active {
+    background: rgba(80,210,140,0.10);
+    border: 1px solid rgba(80,210,140,0.18);
+    color: #70d89c;
+}
+
+.status-blocked {
+    background: rgba(255,174,70,0.10);
+    border: 1px solid rgba(255,174,70,0.20);
+    color: #ffb347;
+}
+
+.admin-empty {
+    padding: 30px;
+    border: 1px dashed rgba(255,255,255,0.12);
+    border-radius: 12px;
+    text-align: center;
+    opacity: 0.55;
+}
+
+@media (max-width: 850px) {
+
+    .admin-game-row {
+        grid-template-columns: 120px minmax(0, 1fr);
+    }
+
+    .admin-game-image {
+        width: 120px;
+        height: 90px;
+    }
+
+    .admin-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        min-width: 0;
+    }
+
+    .admin-actions form,
+    .admin-actions .button {
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .admin-game-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .admin-game-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .admin-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .admin-actions form,
+    .admin-actions .button {
+        width: 100%;
+    }
+}
+
+/* GAME STORE ADMIN DESIGN START */
+
+/* =========================================================
+   ОБЩАЯ АДМИН-ПАНЕЛЬ
+   ========================================================= */
+
+.gs-admin-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ВЕРХНИЙ БЛОК
+   ========================================================= */
+
+.gs-admin-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 42px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.gs-admin-eyebrow {
+    margin-bottom: 9px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.38);
+}
+
+.gs-admin-hero h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.gs-admin-hero p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.50);
+}
+
+.gs-admin-hero-inner {
+    align-items: flex-end;
+}
+
+.gs-admin-back {
+    display: inline-block;
+    margin-bottom: 21px;
+    color: rgba(255,255,255,0.48);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.gs-admin-back:hover {
+    color: #ffffff;
+}
+
+.gs-admin-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.gs-admin-stat span {
+    margin-bottom: 2px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.38);
+}
+
+.gs-admin-stat strong {
+    font-size: 28px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   СЕКЦИИ
+   ========================================================= */
+
+.gs-admin-section {
+    width: 100%;
+}
+
+.gs-section-title {
+    margin-bottom: 20px;
+}
+
+.gs-section-title h2 {
+    margin: 0;
+    font-size: 21px;
+    letter-spacing: -0.01em;
+}
+
+.gs-section-title p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.42);
+}
+
+
+/* =========================================================
+   ПРОДАВЦЫ
+   ========================================================= */
+
+.gs-sellers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.gs-seller-card {
+    min-width: 0;
+    padding: 19px;
+    border: 1px solid rgba(255,255,255,0.075);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.028);
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.gs-seller-card:hover {
+    border-color: rgba(255,255,255,0.13);
+    background: rgba(255,255,255,0.042);
+    transform: translateY(-2px);
+}
+
+.gs-seller-top {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.gs-seller-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.gs-seller-name {
+    min-width: 0;
+}
+
+.gs-seller-name h3 {
+    overflow: hidden;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gs-seller-name span {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.40);
+}
+
+.gs-seller-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.gs-seller-count {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.gs-seller-count strong {
+    font-size: 19px;
+}
+
+.gs-seller-count span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.38);
+}
+
+
+/* =========================================================
+   ИГРЫ
+   ========================================================= */
+
+.gs-games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gs-game-card {
+    display: grid;
+    grid-template-columns: 148px minmax(0, 1fr);
+    gap: 18px;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.075);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.028);
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.gs-game-card:hover {
+    border-color: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.038);
+}
+
+.gs-game-cover {
+    width: 148px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.055);
+}
+
+.gs-game-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gs-game-no-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: rgba(255,255,255,0.25);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.gs-game-body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.gs-game-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.gs-game-title {
+    min-width: 0;
+}
+
+.gs-game-title h2 {
+    overflow: hidden;
+    margin: 1px 0 0;
+    font-size: 17px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gs-game-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.40);
+}
+
+.gs-game-meta i {
+    font-style: normal;
+    opacity: 0.5;
+}
+
+.gs-game-description {
+    display: -webkit-box;
+    overflow: hidden;
+    max-width: 720px;
+    margin: 11px 0 0;
+    color: rgba(255,255,255,0.48);
+    font-size: 12px;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+
+/* =========================================================
+   СТАТУС
+   ========================================================= */
+
+.gs-status {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    min-height: 26px;
+    padding: 0 9px;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.gs-status-active {
+    border: 1px solid rgba(80,210,140,0.18);
+    background: rgba(80,210,140,0.08);
+    color: #70d89c;
+}
+
+.gs-status-blocked {
+    border: 1px solid rgba(255,174,70,0.20);
+    background: rgba(255,174,70,0.08);
+    color: #ffb347;
+}
+
+
+/* =========================================================
+   КНОПКИ
+   ========================================================= */
+
+.gs-game-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+}
+
+.gs-game-actions form {
+    margin: 0;
+    padding: 0;
+}
+
+.gs-admin-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 12px !important;
+    box-sizing: border-box;
+    border-radius: 8px !important;
+    font-family: inherit;
+    font-size: 11px !important;
+    font-weight: 650 !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.gs-admin-btn:hover {
+    transform: translateY(-1px);
+}
+
+.gs-admin-btn-light {
+    border: 1px solid rgba(255,255,255,0.10) !important;
+    background: rgba(255,255,255,0.055) !important;
+    color: rgba(255,255,255,0.82) !important;
+}
+
+.gs-admin-btn-light:hover {
+    border-color: rgba(255,255,255,0.17) !important;
+    background: rgba(255,255,255,0.095) !important;
+    color: #ffffff !important;
+}
+
+.gs-admin-btn-orange {
+    border: 1px solid rgba(255,174,70,0.23) !important;
+    background: rgba(255,174,70,0.085) !important;
+    color: #ffb347 !important;
+}
+
+.gs-admin-btn-orange:hover {
+    border-color: rgba(255,174,70,0.38) !important;
+    background: rgba(255,174,70,0.15) !important;
+    color: #ffc56d !important;
+}
+
+.gs-admin-btn-danger {
+    border: 1px solid rgba(255,75,90,0.20) !important;
+    background: rgba(255,75,90,0.065) !important;
+    color: #ff7f8b !important;
+}
+
+.gs-admin-btn-danger:hover {
+    border-color: rgba(255,75,90,0.34) !important;
+    background: rgba(255,75,90,0.12) !important;
+    color: #ff9aa3 !important;
+}
+
+.gs-admin-btn span {
+    margin-left: 6px;
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   ПУСТО
+   ========================================================= */
+
+.gs-admin-empty {
+    padding: 34px;
+    border: 1px dashed rgba(255,255,255,0.11);
+    border-radius: 14px;
+    color: rgba(255,255,255,0.42);
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .gs-sellers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .gs-admin-hero {
+        align-items: flex-start;
+    }
+
+    .gs-admin-hero h1 {
+        font-size: 30px;
+    }
+
+    .gs-game-card {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .gs-game-cover {
+        width: 110px;
+        height: 80px;
+    }
+
+    .gs-game-heading {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .gs-sellers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-admin-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gs-admin-stat {
+        align-items: flex-start;
+    }
+
+    .gs-game-card {
+        display: block;
+    }
+
+    .gs-game-cover {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 14px;
+    }
+
+}
+
+/* GAME STORE ADMIN DESIGN END */
